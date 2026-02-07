@@ -1,0 +1,138 @@
+.retro-emulator,
+.retro-emulator * {
+  box-sizing: border-box;
+}
+
+.retro-emulator {
+  --retro-padding: 20px;
+  --retro-header-padding: 8px 12px;
+  --retro-header-margin: 10px;
+  --retro-terminal-padding: 10px;
+  --retro-terminal-margin: 15px;
+  --retro-input-padding: 14px 18px;
+  --retro-input-gap: 14px;
+  --retro-input-inner-padding: 8px 12px;
+  --retro-button-padding: 10px 20px;
+  --retro-keyboard-margin: 15px;
+  --retro-keyboard-padding: 12px;
+  --retro-key-gap: 3px;
+  --retro-key-margin: 3px;
+  --retro-key-height: 32px;
+  --retro-key-radius: 3px;
+  --retro-key-width: 32px;
+  --retro-key-wide-width: 54px;
+  --retro-key-space-width: 180px;
+  height: 100vh;
+  padding: var(--retro-padding);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.retro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--retro-header-padding);
+  margin-bottom: var(--retro-header-margin);
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.retro-terminal {
+  line-height: 1.5;
+  white-space: pre;
+  word-break: normal;
+  overflow-x: auto;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  margin-bottom: var(--retro-terminal-margin);
+  min-height: 0;
+  padding: var(--retro-terminal-padding);
+  cursor: text;
+}
+
+.retro-output-line {
+  white-space: inherit;
+}
+
+.retro-loading {
+  opacity: 0.8;
+}
+
+.retro-cursor {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+}
+
+.retro-input-bar {
+  display: flex;
+  align-items: center;
+  padding: var(--retro-input-padding);
+  gap: var(--retro-input-gap);
+  flex-shrink: 0;
+}
+
+.retro-input-label {
+  font-weight: bold;
+}
+
+.retro-input {
+  flex: 1;
+  border: 1px solid;
+  padding: var(--retro-input-inner-padding);
+  outline: none;
+}
+
+.retro-button {
+  border: none;
+  padding: var(--retro-button-padding);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.retro-button:not(:disabled) {
+  cursor: pointer;
+}
+
+.retro-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.retro-keyboard {
+  margin-top: var(--retro-keyboard-margin);
+  padding: var(--retro-keyboard-padding);
+  border: 1px solid;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.retro-keyboard-title {
+  font-size: 11px;
+  margin-bottom: 10px;
+  font-family: monospace;
+}
+
+.retro-keyboard-row {
+  display: flex;
+  gap: var(--retro-key-gap);
+  margin-bottom: var(--retro-key-margin);
+  justify-content: center;
+}
+
+.retro-key {
+  height: var(--retro-key-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--retro-key-radius);
+  font-family: monospace;
+  transition: all 0.05s ease;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
